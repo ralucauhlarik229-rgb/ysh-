@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>叶仕涵的大学规划书 | 福建农林大学金融学</title>
+    <style>
+        /* 全局基础重置与变量 */
+        :root {
+            --bg-body: #090e17;
+            --bg-card: #131d2e;
+            --bg-card-hover: #1a273e;
+            --border-color: #26354a;
+            --text-main: #f1f5f9;
+            --text-sub: #94a3b8;
+            --c-blue: #38bdf8;
+            --c-amber: #fbbf24;
+            --c-green: #34d399;
+            --c-rose: #f87171;
+            --c-purple: #c084fc;
+            --c-gold: #f59e0b;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding-bottom: 60px;
+        }
+        a { text-decoration: none; color: inherit; }
+
+        /* 布局容器 */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+
+        /* 顶部导航栏 */
+        header {
+            background-color: rgba(19, 29, 46, 0.95);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(8px);
+        }
+        .nav-wrap {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 0;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .avatar {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #2563eb, #10b981);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 18px;
+            color: #fff;
+        }
+        .brand-title { font-size: 17px; font-weight: 700; color: #fff; }
+        .brand-sub { font-size: 12px; color: var(--text-sub); }
+        .contact-phone {
+            font-size: 13px;
+            color: var(--c-green);
+            background: rgba(52, 211, 153, 0.1);
+            padding: 5px 12px;
+            border-radius: 20px;
+            border: 1px solid rgba(52, 211, 153, 0.25);
+        }
+
+        /* 核心看板 (Hero) */
+        .hero {
+            margin: 24px auto;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 24px;
+        }
+        .hero-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+        .hero-title { font-size: 22px; font-weight: 800; color: #fff; margin-bottom: 6px; }
+        .hero-desc { font-size: 13.5px; color: var(--text-sub); max-width: 720px; }
+        .hero-highlight {
+            background: rgba(56, 189, 248, 0.1);
+            border-left: 3px solid var(--c-blue);
+            padding: 8px 12px;
+            border-radius: 0 6px 6px 0;
+            font-size: 13px;
+            color: #bae6fd;
+            margin-top: 10px;
+        }
+        
+        .quick-nav {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        .btn-nav {
+            font-size: 12px;
+            font-weight: 600;
+            padding: 6px 12px;
+            border-radius: 6px;
+            background: #1e293b;
+            border: 1px solid var(--border-color);
+            transition: 0.2s;
+        }
+        .btn-nav:hover { background: #334155; }
+        .btn-y1 { color: var(--c-blue); border-color: rgba(56, 189, 248, 0.4); }
+        .btn-y2 { color: var(--c-amber); border-color: rgba(251, 191, 36, 0.4); }
+        .btn-y3 { color: var(--c-green); border-color: rgba(52, 211, 153, 0.4); }
+        .btn-y4 { color: var(--c-rose); border-color: rgba(248, 113, 113, 0.4); }
+
+        /* 毕业核心指标看板 */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 10px;
+            margin-top: 20px;
+            padding-top: 18px;
+            border-top: 1px solid var(--border-color);
+        }
+        .metric-card {
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid var(--border-color);
+            padding: 12px 14px;
+            border-radius: 10px;
+        }
+        .metric-label { font-size: 11.5px; color: var(--text-sub); margin-bottom: 4px; }
+        .metric-val { font-size: 15px; font-weight: 700; color: #fff; }
+
+        /* 时间段规划板块 */
+        .year-section {
+            margin-top: 40px;
+            scroll-margin-top: 80px;
+        }
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+        .section-title { font-size: 19px; font-weight: 700; color: #fff; }
+        .section-date { font-size: 13px; font-weight: normal; margin-left: 6px; }
+
+        .hr-box {
+            background: rgba(30, 41, 59, 0.45);
+            border-left: 4px solid #3b82f6;
+            padding: 12px 16px;
+            border-radius: 0 8px 8px 0;
+            font-size: 13.5px;
+            color: #cbd5e1;
+            margin-bottom: 16px;
+        }
+        .hr-box strong { color: #fff; }
+
+        /* 节点卡片网格 */
+        .timeline-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 16px;
+        }
+        .timeline-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 18px;
+            transition: transform 0.15s ease, border-color 0.15s ease;
+        }
+        .timeline-card:hover {
+            transform: translateY(-2px);
+            background: var(--bg-card-hover);
+        }
+        .card-full {
+            grid-column: 1 / -1;
+        }
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .card-time { font-size: 13.5px; font-weight: 700; color: #fff; }
+        .card-tag {
+            font-size: 12px;
+            font-weight: 600;
+            padding: 2px 8px;
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        /* 列表与类别徽章 */
+        .item-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+        .item-list li {
+            font-size: 13.5px;
+            color: #cbd5e1;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+        .badge {
+            font-size: 11px;
+            font-weight: 600;
+            padding: 2px 6px;
+            border-radius: 4px;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+        .badge-red { background: rgba(239, 68, 68, 0.18); color: #fca5a5; border: 1px solid rgba(239, 68, 68, 0.3); }
+        .badge-blue { background: rgba(56, 189, 248, 0.18); color: #7dd3fc; border: 1px solid rgba(56, 189, 248, 0.3); }
+        .badge-green { background: rgba(52, 211, 153, 0.18); color: #6ee7b7; border: 1px solid rgba(52, 211, 153, 0.3); }
+        .badge-amber { background: rgba(251, 191, 36, 0.18); color: #fde047; border: 1px solid rgba(251, 191, 36, 0.3); }
+        .badge-purple { background: rgba(192, 132, 252, 0.18); color: #d8b4fe; border: 1px solid rgba(192, 132, 252, 0.3); }
+        .badge-gold { background: rgba(245, 158, 11, 0.18); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.35); }
+
+        /* 预案高亮框 */
+        .plan-box {
+            background: rgba(15, 23, 42, 0.7);
+            border: 1px dashed rgba(251, 191, 36, 0.4);
+            border-radius: 8px;
+            padding: 10px 12px;
+            margin-top: 8px;
+            font-size: 12.5px;
+            color: #fde68a;
+        }
+        .plan-title { font-weight: bold; margin-bottom: 4px; display: flex; align-items: center; gap: 4px; }
+
+        footer {
+            margin-top: 60px;
+            text-align: center;
+            font-size: 12px;
+            color: var(--text-sub);
+            border-top: 1px solid var(--border-color);
+            padding-top: 24px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 顶部导航 -->
+    <header>
+        <div class="container nav-wrap">
+            <div class="brand">
+                <div class="avatar">叶</div>
+                <div>
+                    <div class="brand-title">叶仕涵的大学规划书</div>
+                    <div class="brand-sub">福建农林大学 · 金融学</div>
+                </div>
+            </div>
+            <div class="contact-phone">
+                📞 电话：15388189899
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <!-- 顶部看板 -->
+        <section class="hero">
+            <div class="hero-top">
+                <div>
+                    <h1 class="hero-title">金融学精英大学四年全景路线图</h1>
+                    <p class="hero-desc">以终为始，构筑“班长领导力 + 党员政治把关 + 88+GPA + 双创/英竞赛国奖 + CFA L1/雅思7.0 + 3-4段阶梯式实习 + AI金融落地”的复合画像。</p>
+                    <div class="hero-highlight">
+                        💡 <strong>HR视角：</strong>“班长 + 党员 + 头部双创国赛/英语国赛”直接构成校招顶级的“学生领袖与综合素质”模型，完美应对顶尖金融机构的行为面试（Behavioral Interview）。
+                    </div>
+                </div>
+                <div class="quick-nav">
+                    <a href="#y1" class="btn-nav btn-y1">🔰 大一·领袖开局</a>
+                    <a href="#y2" class="btn-nav btn-y2">⚔️ 大二·双创国赛</a>
+                    <a href="#y3" class="btn-nav btn-y3">🚀 大三·顶级实习</a>
+                    <a href="#y4" class="btn-nav btn-y4">🏆 大四·秋招收割</a>
+                </div>
+            </div>
+
+            <!-- 核心画像指标 -->
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-label">👑 领导力与职务</div>
+                    <div class="metric-val" style="color: var(--c-gold);">班长 / 领袖画像</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">🚩 政治面貌</div>
+                    <div class="metric-val" style="color: var(--c-rose);">中共正式党员</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">📊 学业基石</div>
+                    <div class="metric-val" style="color: var(--c-blue);">GPA 88+</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">🏆 顶级竞赛成果</div>
+                    <div class="metric-val" style="color: var(--c-amber);">双创国奖 / NECCS</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">📜 专业与语言</div>
+                    <div class="metric-val" style="color: var(--c-purple);">CFA L1 / 雅思7.0+</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">💼 实习积累</div>
+                    <div class="metric-val" style="color: var(--c-green);">3-4段递进实习</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 大一 ==================== -->
+        <section id="y1" class="year-section">
+            <div class="section-header">
+                <h2 class="section-title">🔰 大一：领袖开局、双赛启航与技能通关 <span class="section-date" style="color: var(--c-blue);">（2026.09 – 2027.08）</span></h2>
+            </div>
+            
+            <div class="hr-box" style="border-left-color: var(--c-blue);">
+                <strong>HR视角解读：</strong>大一拿下“班长”是核心支点，能极大提升辅导员推优入党效率，并在面试中提供大量团队协作与危机处理的STAR法则案例。结合计算机与语言竞赛，直接拉满大一综合测评。
+            </div>
+
+            <div class="timeline-grid">
+                
+                <!-- 节点 1 -->
+                <div class="timeline-card">
+                    <div class="card-header">
+                        <span class="card-time" style="color: var(--c-blue);">2026.09 - 2026.10</span>
+                        <span class="card-tag">【班委竞选与入党抢跑】</span>
+                    </div>
+                    <ul class="item-list">
+                        <li><span class="badge badge-gold">职务竞聘</span><span>开学班会全力竞选<strong>班长</strong>（突出沟通协调力与两岸交流意愿，迅速与辅导员、院团委建立信任链）；</span></li>
+                        <li><span class="badge badge-red">政治</span><span>开学第一周递交<strong>入党申请书</strong>（班长身份可确保支部推优的高优先级）；</span></li>
+                        <li><span class="badge badge-purple">人脉/实践</span><span>以班长/志愿者双重身份统筹参与校双选会，结识金融机构HR，摸清企业核心招聘标准；</span></li>
+                        <li><span class="badge badge-amber">考证报名</span><span>报名12月全国大学英语四级（CET-4）。</span></li>
+                    </ul>
+                </div>
+
+                <!-- 节点 2 -->
+                <div class="timeline-card">
+                    <div class="card-header">
+                        <span class="card-time" style="color: var(--c-blue);">2026.11 - 2026.12</span>
+                        <span class="card-tag">【四级突破与计算机报考】</span>
+                    </div>
+                    <ul class="item-list">
+                        <li><span class="badge badge-blue">考证</span><span>参加CET-4考试（目标600+）;</span></li>
+                        <li><span class="badge badge-amber">考证报名</span><span>关注福建省教育考试院通知，报名<strong>2027年3月全国计算机等级考试（NCRE）</strong>（首选：二级MS Office高级应用 / Python; 次选：一级计算机）;</span></li>
+                        <li><span class="badge badge-red">政治</span><span>完成第1季度思想汇报。</span></li>
+                    </ul>
+                </div>
+
+                <!-- 节点 3 -->
+                <div class="timeline-card">
+                    <div class="card-header">
+                        <span class="card-time" style="color: var(--c-blue);">2027.01 - 2027.02（大一寒假）</span>
+                        <span class="card-tag">【计算机备考与英竞赛前冲刺】</span>
+                    </div>
+                    <ul class="item-list">
+                        <li><span class="badge badge-blue">考证冲刺</span><span>刷NCRE题库（重点攻克二级真题实操）;</span></li>
+                        <li><span class="badge badge-amber">竞赛准备</span><span>备考<strong>全国大学生英语竞赛（NECCS，C类非英语专业）</strong>，练习听力及综合阅读;</span></li>
+                        <li><span class="badge badge-purple">工具探索</span><span>用Trae CN与Gemini尝试跑通小型财务分析小工具，作为后续双创大赛的雏形原型。</span></li>
+                    </ul>
+                </div>
+
+                <!-- 节点 4 -->
+                <div class="timeline-card">
+                    <div class="card-header">
+                        <span class="card-time" style="color: var(--c-blue);">2027.03 - 2027.05</span>
+                        <span class="card-tag">【双赛落地与计算机考核】</span>
+                    </div>
+                    <ul class="item-list">
+                        <li>
+                            <span class="badge badge-blue">考证</span>
+                            <div style="flex:1;">
+                                <span>参加全国计算机等级考试（NCRE）；</span>
+                                <div class="plan-box">
+                                    <div class="plan-title">⚠️【二级报考与备选兜底预案】</div>
+                                    <div>• <strong>情况A（已报上二级）：</strong>若通过直接拿到二级证书；</div>
+                                    <div>• <strong>情况B（若未报上二级，仅考了一级）：</strong>启动预案，于2027年6月报名大二秋季（2027年9月）的NCRE二级考试，利用暑假集中刷题兜底通过。</div>
+                                </div>
+                            </div>
+                        </li>
+                        <li><span class="badge badge-amber">竞赛1</span><span>参加<strong>全国大学生英语竞赛（NECCS）</strong>初赛（4月中旬）与省决赛（5月中旬），争夺国家二等奖/一等奖;</span></li>
+                        <li><span class="badge badge-amber">竞赛2</span><span>启动<strong>中国国际大学生创新大赛（原“互联网+”）</strong>校赛组队，依托金融（闽台）背景，打造《基于AI与大模型的两岸跨境金融/普惠金融创新服务系统》项目；</span></li>
+                        <li><span class="badge badge-red">政治</span><span>顺利列为<strong>入党积极分子</strong>；完成第2季度思想汇报。</span></li>
+                    </ul>
+                </div>
+
+                <!-- 节点 5 -->
+                <div class="timeline-card card-full">
+                    <div class="card-header">
+                        <span class="card-time" style="color: var(--c-blue);">2027.06 - 2027.08（大一暑假）</span>
+                        <span class="card-tag">【创新大赛打磨与初阶实习】</span>
+                    </div>
+                    <ul class="item-list">
+                        <li><span class="badge badge-blue">学业与考证</span><span>期末稳住GPA 88+; 参加6月CET-6考试（目标550+）;</span></li>
+                        <li><span class="badge badge-amber">竞赛跟进</span><span>跟进中国国际大学生创新大赛校赛晋级，暑假开展省赛集训与项目商业计划书（BP）精修；</span></li>
+                        <li><span class="badge badge-green">实习</span><span>完成<strong>第一段基础金融实习</strong>（本地城商行/农商行前台实习生，或券商营业部财富管理助理）；</span></li>
+                        <li><span class="badge badge-red">政治</span><span>完成第3季度思想汇报。</span></li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ==================== 大二 ==================== -->
+        <section id="y2" class="year-section">
+            <div class="section-header">
+                <h2 class="section-title">⚔️ 大二：双创国赛、商赛深耕与专业准入 <span class="section-date" style="color: var(--c-amber);">（2027.09 – 2028.08）</span></h2>
+            </div>
+            
+            <div class="hr-box" style="border-left-color: var(--c-amber);">
+                <strong>HR视角解读：</strong>大二进入高含金量成果变现期。拥有双创大赛国/省奖，搭配扎实的行业研究与从业准入，能大幅拉开与同龄人的简历壁垒。
+            </div>
+
+            <div class="timeline-grid">
+                
+                <!-- 节点 1 -->
+                <div class="timeline-card">
+                    <div class="card-header">
+                        <span class="card-time" style="color: var(--c-amber);">2027.09 - 2027.10</span>
+                        <span class="card-tag">【双创国赛冲刺与二级兜底】</span>
+                    </div>
+                    <ul class="item-list">
+                        <li><span class="badge badge-amber">竞赛</span><span>中国国际大学生创新大赛全国总决赛打响，全力冲刺国奖/省金奖；</span></li>
+                        <li><span class="badge badge-blue">考证兜底</span><span>若大一未考二级，参加<strong>9月NCRE二级考试</strong>顺利收官;</span></li>
+                        <li><span class="badge badge-amber">竞赛组队</span><span>以核心骨干身份组队报名<strong>“正大杯”全国大学生市场调查与分析大赛</strong>。</span></li>
+                    </ul>
+                </div>
+
+                <!-- 节点 2 -->
+                <div class="timeline-card">
+                    <div class="card-header">
+                        <span class="card-time" style="color: var(--c-amber);">2027.11 - 2027.12</span>
+                        <span class="card-tag">【从业资格考与雅思一战】</span>
+                    </div>
+                    <ul class="item-list">
+                        <li><span class="badge badge-blue">考证</span><span>报考并拿下<strong>证券从业资格证 / 基金从业资格证</strong>;</span></li>
+                        <li><span class="badge badge-purple">语言</span><span>参加<strong>雅思首考</strong>（目标6.5分，检测真实语言水位）；</span></li>
+                        <li><span class="badge badge-red">政治</span><span>完成第4季度思想汇报。</span></li>
+                    </ul>
+                </div>
+
+                <!-- 节点 3 -->
+                <div class="timeline-card">
+                    <div class="card-header">
+                        <span class="card-time" style="color: var(--c-amber);">2028.01 - 2028.02（大二寒假）</span>
+                        <span class="card-tag">【进阶核算/研报实习】</span>
+                    </div>
+                    <ul class="item-list">
+                        <li><span class="badge badge-green">实习</span><span>寻求第二段实习（八大会计师事务所审计助理实习生，或中型券商研究所/固收部PTA远程支持）；</span></li>
+                        <li><span class="badge badge-purple">工具深化</span><span>运用ima与Workbuddy构建个人自动化行业数据库。</span></li>
+                    </ul>
+                </div>
+
+                <!-- 节点 4 -->
+                <div class="timeline-card">
+                    <div class="card-header">
+                        <span class="card-time" style="color: var(--c-amber);">2028.03 - 2028.05</span>
+                        <span class="card-tag">【市调赛冲奖与发展对象推选】</span>
+                    </div>
+                    <ul class="item-list">
+                        <li><span class="badge badge-amber">竞赛</span><span>参加“正大杯”市调赛省赛及国赛答辩（展示Python数据挖掘与实证分析能力）；</span></li>
+                        <li><span class="badge badge-red">政治</span><span>积极分子考察满1年，经班级推优与考核，确定为<strong>发展对象</strong>，参加党校集中培训；</span></li>
+                        <li><span class="badge badge-red">政治</span><span>完成第5季度思想汇报。</span></li>
+                    </ul>
+                </div>
+
+                <!-- 节点 5 -->
+                <div class="timeline-card card-full">
+                    <div class="card-header">
+                        <span class="card-time" style="color: var(--c-amber);">2028.06 - 2028.08（大二暑假）</span>
+                        <span class="card-tag">【CFA锁定与名企日常实习】</span>
+                    </div>
+                    <ul class="item-list">
+                        <li><span class="badge badge-blue">考证</span><span>进入毕业前23个月窗口期，注册并正式报名<strong>CFA一级</strong>；</span></li>
+                        <li><span class="badge badge-green">实习</span><span>进入外企财务分析、省级投融资平台或中型VC/PE机构担任日常分析师；</span></li>
+                        <li><span class="badge badge-red">政治</span><span>完成第6季度思想汇报。</span></li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ==================== 大三 ==================== -->
+        <section id="y3" class="year-section">
+            <div class="section-header">
+                <h2 class="section-title">🚀 大三：闽台特色爆发与顶级暑期实习 <span class="section-date" style="color: var(--c-green);">（2028.09 – 2029.08）</span></h2>
+            </div>
+            
+            <div class="hr-box" style="border-left-color: var(--c-green);">
+                <strong>HR视角解读：</strong>大三的终极目标是<strong>暑期实习转正（Summer Intern Return Offer）</strong>。大厂暑期实习网申一般在3-5月打响，大三暑期实习经历直接决定秋招能否拿到顶级机构敲门砖。
+            </div>
+
+            <div class="timeline-grid">
+                
+                <!-- 节点 1 -->
+                <div class="timeline-card">
+                    <div class="card-header">
+                        <span class="card-time" style="color: var(--c-green);">2028.09 - 2028.11</span>
+                        <span class="card-tag">【预备党员接收与两岸特色】</span>
+                    </div>
+                    <ul class="item-list">
+                        <li><span class="badge badge-red">政治</span><span>经支部大会表决，正式接收为<strong>中共预备党员</strong>；</span></li>
+                        <li><span class="badge badge-blue">闽台资源</span><span>若参与涉台研学/两岸交流项目，主导撰写《两岸金融监管机制与数字化转型比较》专题报告；</span></li>
+                        <li><span class="badge badge-amber">竞赛</span><span>带队参加<strong>CFA协会全球投资分析大赛（IRC）</strong>或高规格商业案例挑战赛。</span></li>
+                    </ul>
+                </div>
+
+                <!-- 节点 2 -->
+                <div class="timeline-card">
+                    <div class="card-header">
+                        <span class="card-time" style="color: var(--c-green);">2028.12 - 2029.02（大三寒假）</span>
+                        <span class="card-tag">【CFA一级拿下与雅思冲7.0】</span>
+                    </div>
+                    <ul class="item-list">
+                        <li><span class="badge badge-blue">考证</span><span>参加<strong>CFA Level 1考试</strong>（拿下通过信，作为硬通货）；</span></li>
+                        <li><span class="badge badge-purple">语言</span><span>锁定<strong>雅思二战7.0分+</strong>（小分不低于6.0），成绩2年有效期完美覆盖大四网申及留学备选；</span></li>
+                        <li><span class="badge badge-red">政治</span><span>完成第7、8季度思想汇报。</span></li>
+                    </ul>
+                </div>
+
+                <!-- 节点 3 -->
+                <div class="timeline-card">
+                    <div class="card-header">
+                        <span class="card-time" style="color: var(--c-green);">2029.03 - 2029.05</span>
+                        <span class="card-tag">【暑期实习抢位战（大三决胜点）】</span>
+                    </div>
+                    <ul class="item-list">
+                        <li><span class="badge badge-green">网申投递</span><span>全量网申<strong>头部机构暑期实习生</strong>（四大审计/咨询、中信/中金/广发等券商暑期夏令营、外资行/国有大行管培暑期项目）；</span></li>
+                        <li><span class="badge badge-purple">人脉挖掘</span><span>拜访合作台湾教授、实习Mentor，提前锁定海外/名企推荐信；</span></li>
+                        <li><span class="badge badge-red">政治</span><span>完成思想汇报。</span></li>
+                    </ul>
+                </div>
+
+                <!-- 节点 4 -->
+                <div class="timeline-card">
+                    <div class="card-header">
+                        <span class="card-time" style="color: var(--c-green);">2029.06 - 2029.08（大三暑假）</span>
+                        <span class="card-tag">【高含金量暑期实习】</span>
+                    </div>
+                    <ul class="item-list">
+                        <li><span class="badge badge-green">实习</span><span>全职投入顶级暑期实习项目，以班长级别的沟通协调力+扎实金融实操，全力争取<strong>秋招留用Offer（Return Offer）</strong>；</span></li>
+                        <li><span class="badge badge-red">政治</span><span>完成第9季度思想汇报。</span></li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ==================== 大四 ==================== -->
+        <section id="y4" class="year-section">
+            <div class="section-header">
+                <h2 class="section-title">🏆 大四：秋招决战、正式转正与高质量毕业 <span class="section-date" style="color: var(--c-rose);">（2029.09 – 2030.06）</span></h2>
+            </div>
+            
+            <div class="hr-box" style="border-left-color: var(--c-rose);">
+                <strong>HR视角解读：</strong>最终收割期。此时简历已实现“全要素闭环”：<strong>班长领导力 + 党员政治把关 + 88+GPA + 双创/英竞赛国奖 + CFA L1/雅思7.0 + 3-4段阶梯式实习 + AI金融落地成果</strong>。
+            </div>
+
+            <div class="timeline-grid">
+                
+                <!-- 节点 1 -->
+                <div class="timeline-card">
+                    <div class="card-header">
+                        <span class="card-time" style="color: var(--c-rose);">2029.09 - 2029.11</span>
+                        <span class="card-tag">【秋招全速推进与党员转正】</span>
+                    </div>
+                    <ul class="item-list">
+                        <li><span class="badge badge-green">求职（主战场）</span><span>全面铺开秋招网申（政策性银行、国有六大行总行/省分行、央国企投资财务岗、券商前台岗位）；</span></li>
+                        <li><span class="badge badge-red">政治</span><span>预备期满1年，支部大会讨论通过，按期转为<strong>中共正式党员</strong>；</span></li>
+                        <li><span class="badge badge-blue">论文</span><span>毕业论文导师选聘，题拟《AI大模型与金融科技在两岸资产配置中的实证研究》。</span></li>
+                    </ul>
+                </div>
+
+                <!-- 节点 2 -->
+                <div class="timeline-card">
+                    <div class="card-header">
+                        <span class="card-time" style="color: var(--c-rose);">2029.12 - 2030.01</span>
+                        <span class="card-tag">【秋招复盘与Offer签约】</span>
+                    </div>
+                    <ul class="item-list">
+                        <li><span class="badge badge-green">求职</span><span>横向对比秋招Offer/留用Offer，签署三方协议（或定稿名校金融硕申请）；</span></li>
+                        <li><span class="badge badge-blue">论文</span><span>结合Trae CN与Gemini完成毕业论文模型搭建与初稿撰写。</span></li>
+                    </ul>
+                </div>
+
+                <!-- 节点 3 -->
+                <div class="timeline-card">
+                    <div class="card-header">
+                        <span class="card-time" style="color: var(--c-rose);">2030.02 - 2030.04</span>
+                        <span class="card-tag">【春招补录与论文盲审】</span>
+                    </div>
+                    <ul class="item-list">
+                        <li><span class="badge badge-green">求职</span><span>针对未满意岗位或体制内特定选拔进行春招补录冲刺；</span></li>
+                        <li><span class="badge badge-blue">论文</span><span>完成毕业论文盲审与定稿，争评校级优秀毕业论文。</span></li>
+                    </ul>
+                </div>
+
+                <!-- 节点 4 -->
+                <div class="timeline-card">
+                    <div class="card-header">
+                        <span class="card-time" style="color: var(--c-rose);">2030.05 - 2030.06</span>
+                        <span class="card-tag">【答辩与职场启航】</span>
+                    </div>
+                    <ul class="item-list">
+                        <li><span class="badge badge-blue">毕业</span><span>顺利完成答辩，办理党组织关系及档案转接；</span></li>
+                        <li><span class="badge badge-green">起航</span><span>以毫无短板的复合型金融精英画像正式步入职场。</span></li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 页脚 -->
+        <footer>
+            <p>© 2026-2030 叶仕涵 · 福建农林大学金融学 · 个人大学生涯路线图</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
